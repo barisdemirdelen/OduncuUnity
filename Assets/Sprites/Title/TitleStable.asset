@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1730d0b8751ac9e44b6303c6b7703fa7, type: 3}
+  m_Name: TitleStable
+  m_EditorClassIdentifier: 
+  rootClip: {fileID: 0}
+  m_EnableSequenceCaching: 0
+  m_AssetVersion: 4
+  m_AudioResourcesDirectory: Sprites\Title/
+  m_AssetData: 4341470005091903000078da63640081067b4628cdc9c009a479fe03c109c6450cbc0cef98c0320c3c1005fbc1b8e1a93303839a33480358330f43517e7e4948666e6a4e665e2a078327cc5490b18c020c25992539a9f1c525894939a97a0579e9081b271c6460e800620707080619780668f00f27b05690122e063e2893092604744d0013c44d1065105106a85b19600e6340e123d490a0a1c19e99780d60be030b093680bdcc4a9a06060636d29cd4b09f9d440df61ca43a8993041bf683e29a8b340d0dfbb9497492030fa99e66400200010a4aee
+  m_GUID: 512744f9db00784478d9af062e4a628e
+  m_Path: Sprites\Title/
+  m_IsExternalDataCollected: 1
+  m_ExternalData:
+  - m_TimelineID: 0
+    m_ObjectTypeFlags: 00000000
+  m_HasNesting: 0
+  m_KeyFrames: []
+  m_AudioResources: []
