@@ -34,7 +34,7 @@ namespace Oduncu
 
         public void ChangeScene()
         {
-            SceneManager.LoadScene("Menu", LoadSceneMode.Single);
+            SceneManager.LoadScene("Menu");
         }
     }
 }
