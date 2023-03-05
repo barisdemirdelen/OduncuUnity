@@ -1,0 +1,16 @@
+{
+    "name": "Oduncu",
+    "rootNamespace": "",
+    "references": [
+        "GUID:7de240cfe4a98064b82bc3a8745af304"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

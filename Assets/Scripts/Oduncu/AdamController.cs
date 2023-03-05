@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CharacterController : MonoBehaviour
+public class AdamController : MonoBehaviour
 {
     private SpriteRenderer m_SpriteRenderer;
     private Camera m_MainCamera;
