@@ -1,7 +1,7 @@
 
 // File:			GAFMovieClipInternalEditor.cs
 // Version:			5.2
-// Last changed:	2017/3/31 09:57
+// Last changed:	2017/3/28 14:41
 // Author:			Nikitin Nikolay, Nikitin Alexey
 // Copyright:		© 2017 GAFMedia
 // Project:			GAF Unity plugin
@@ -61,6 +61,8 @@ namespace GAFEditorInternal.Core
 			
 			drawAsset();
 			drawResourcesState();
+			drawPlaceholder();
+			drawResourceManagement();
 			drawSettings();
 			drawSequences();
 			drawPlayback();
@@ -86,6 +88,16 @@ namespace GAFEditorInternal.Core
 
 				EditorGUILayout.BeginVertical(EditorStyles.textField);
 				{
+					//GUILayout.Space(3f);
+					//EditorGUI.BeginChangeCheck();
+
+					//drawProperty(settingProperty.FindPropertyRelative("m_FlipX"), new GUIContent("Flip X: ", "​Flip current animation by x"));
+					//if (EditorGUI.EndChangeCheck())
+					//{
+					//	serializedObject.ApplyModifiedProperties();
+					//	reloadTargets();
+					//}
+
 					GUILayout.Space(3f);
 					drawProperty(settingProperty.FindPropertyRelative("m_PlayAutomatically"), new GUIContent("Play automatically: ", "Should the animation be played automatically when starting the scene? (Defines whether the animation should be played automatically when starting the scene)​"));
 					
@@ -116,7 +128,7 @@ namespace GAFEditorInternal.Core
                     EditorGUI.BeginChangeCheck();
 
 					var guiEnabled = GUI.enabled;
-					GUI.enabled = targets.Any(x => !x.asset) || targets.All(x => !x.asset.hasNesting);
+                    GUI.enabled = targets.Any(x => !x.asset) || targets.All(x => !x.asset.hasNesting);
 					drawProperty(settingProperty.FindPropertyRelative("m_DecomposeFlashTransform"), new GUIContent("Decompose Flash transform: ", "​")); 
                     if (EditorGUI.EndChangeCheck())
                     {

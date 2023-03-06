@@ -1,7 +1,7 @@
 
 // File:			GAFAssetPostProcessor.cs
 // Version:			5.2
-// Last changed:	2017/3/31 09:57
+// Last changed:	2017/3/28 12:42
 // Author:			Nikitin Nikolay, Nikitin Alexey
 // Copyright:		© 2017 GAFMedia
 // Project:			GAF Unity plugin
@@ -17,7 +17,6 @@ using GAF.Assets;
 using GAFInternal.Reader;
 
 using GAFEditorInternal.Assets;
-using GAFEditorInternal.Tracking;
 
 namespace GAFEditor.Assets
 {
@@ -67,7 +66,9 @@ namespace GAFEditor.Assets
 							EditorUtility.SetDirty(asset);
 							AssetDatabase.SaveAssets();
 
+							GAFResourceManagerInternal.initInstance<GAFResourceManager>();
 							GAFResourceManagerInternal.instance.createResources<GAFTexturesResource>(asset);
+							GAFResourceManagerInternal.instance.createMecanimResources(asset);
 							GAFResourceManagerInternal.instance.defineAudioResources(asset);
 
 							EditorUtility.SetDirty(asset);
@@ -84,7 +85,9 @@ namespace GAFEditor.Assets
 
 						if (asset != null && ((asset.resourcesPaths == null || asset.resourcesPaths.Count == 0) || (asset.audioResources.Count == 0 && asset.sharedData.audioClips.Count > 0)))
 						{
+							GAFResourceManagerInternal.initInstance<GAFResourceManager>();
 							GAFResourceManagerInternal.instance.createResources<GAFTexturesResource>(asset);
+							GAFResourceManagerInternal.instance.createMecanimResources(asset);
 							GAFResourceManagerInternal.instance.defineAudioResources(asset);
 
 							EditorUtility.SetDirty(asset);

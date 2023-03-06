@@ -1,7 +1,7 @@
 ﻿
 // File:			GAFBakedObject.cs
 // Version:			5.2
-// Last changed:	2017/3/30 10:08
+// Last changed:	2017/3/28 12:42
 // Author:			Nikitin Nikolay, Nikitin Alexey
 // Copyright:		© 2017 GAFMedia
 // Project:			GAF Unity plugin

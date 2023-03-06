@@ -1,9 +1,9 @@
 
 // File:			GAFMovieClipInternal.cs
 // Version:			5.2
-// Last changed:	2017/3/31 09:57
+// Last changed:	2017/3/31 09:45
 // Author:			Nikitin Nikolay, Nikitin Alexey
-// Copyright:		Â© 2017 GAFMedia
+// Copyright:		© 2017 GAFMedia
 // Project:			GAF Unity plugin
 
 
@@ -313,6 +313,16 @@ namespace GAFInternal.Core
 
 				isInitialized = true;
 
+			    if (_Asset.rootClip != null)
+			    {
+			        useCustomDelegate = _Asset.rootClip.useCustomDelegate;
+			        customDelegate = _Asset.rootClip.customDelegate;
+			    }
+			    else
+			    {
+			        _Asset.rootClip = this;
+			    }
+
 				m_ClipVersion = GAFSystem.MovieClipVersion;
 				asset = _Asset;
 				timelineID = _TimelineID;
@@ -339,6 +349,7 @@ namespace GAFInternal.Core
 		{
 			if (!System.Object.Equals(asset, null)
 				&& isInitialized
+				&& !usePlaceholder
 				)
 			{
 				if (!asset.isLoaded)
@@ -353,7 +364,13 @@ namespace GAFInternal.Core
 						upgrade();
 					}
 
-					if (m_ClipVersion == GAFSystem.MovieClipVersion)
+                    if (asset.rootClip != null)
+                    {
+                        useCustomDelegate = asset.rootClip.useCustomDelegate;
+                        customDelegate = asset.rootClip.customDelegate;
+                    }
+
+                    if (m_ClipVersion == GAFSystem.MovieClipVersion)
 					{
 						initResources(asset);
 
@@ -362,7 +379,7 @@ namespace GAFInternal.Core
 						{
 							isLoaded = true;
 
-							gafTransform.onTransformChanged -= onTransformChanged;
+                            gafTransform.onTransformChanged -= onTransformChanged;
 							gafTransform.onTransformChanged += onTransformChanged;
 
 							//if (gafTransform.gafParent != null &&
@@ -389,6 +406,7 @@ namespace GAFInternal.Core
 					}
 				}
 			}
+			else if (usePlaceholder) rebuildPlaceholderMesh(); // TODO: Placeholder method refactor.
 		}
 
 		#region TEST
@@ -480,15 +498,13 @@ namespace GAFInternal.Core
 			cleanView();
 
 			isInitialized = false;
-			//asset.dropLoadedTexturesReferences();
+
 			asset = null;
 			resource = null;
 			settings = new GAFAnimationPlayerSettings();
 			
 			m_SequenceIndex = 0;
 			m_Stopwatch = 0.0f;
-
-			Resources.UnloadUnusedAssets();
 		}
 
 		/// <summary>
@@ -561,6 +577,7 @@ namespace GAFInternal.Core
                 && isPlaying() 
                 && !settings.ignoreTimeScale 
 			    && gafTransform.localVisible//m_IsActive
+				&& !usePlaceholder
                 )
             {
             	OnUpdate(Time.deltaTime);
@@ -575,6 +592,7 @@ namespace GAFInternal.Core
                 && isPlaying() 
                 && settings.ignoreTimeScale 
 			    && gafTransform.localVisible//m_IsActive
+				&& !usePlaceholder
                 )
             {
                 OnUpdate(Mathf.Clamp(Time.realtimeSinceStartup - m_PreviouseUpdateTime, 0f, Time.maximumDeltaTime));
@@ -587,6 +605,7 @@ namespace GAFInternal.Core
         {
             if (Application.isPlaying 
                 && isLoaded 
+                && !usePlaceholder
                 )
             {
                 defineFramesEvents(stop, play, setSequence, gotoAndStop, gotoAndPlay);
@@ -614,6 +633,7 @@ namespace GAFInternal.Core
         {
             if (   isLoaded 
                 && !settings.playInBackground 
+                && !usePlaceholder
                 )
             {
                 setPlaying(_FocusStatus && m_ContiniousPlaying);
@@ -624,6 +644,7 @@ namespace GAFInternal.Core
         {
             if ( isLoaded 
                 && !settings.playInBackground 
+                && !usePlaceholder
                 )
             {
                 setPlaying(_PauseStatus);
@@ -639,7 +660,8 @@ namespace GAFInternal.Core
 			if (  asset != null 
                 && asset.isLoaded 
                 && isLoaded 
-                && isPlaying())
+                && isPlaying() 
+                && !usePlaceholder)
             {
                 if (gafTransform.localVisible)//m_IsActive
 					OnUpdate(Mathf.Clamp(Time.realtimeSinceStartup - m_PreviouseUpdateTime, 0f, Time.maximumDeltaTime));
@@ -767,7 +789,7 @@ namespace GAFInternal.Core
 							currentFrameNumber = 0;
 							m_IsFirstFrame = true;
 
-                            if (on_stop_play != null)
+							if (on_stop_play != null)
 								on_stop_play(this);
 
 							if (on_start_play != null)

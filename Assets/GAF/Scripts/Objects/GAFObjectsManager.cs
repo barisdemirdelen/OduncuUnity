@@ -1,12 +1,13 @@
 
 // File:			GAFObjectsManager.cs
 // Version:			5.2
-// Last changed:	2017/3/31 09:57
+// Last changed:	2017/3/28 14:41
 // Author:			Nikitin Nikolay, Nikitin Alexey
-// Copyright:		Â© 2017 GAFMedia
+// Copyright:		© 2017 GAFMedia
 // Project:			GAF Unity plugin
 
 
+using GAFInternal.Objects;
 using UnityEngine;
 
 namespace GAF.Objects
@@ -15,7 +16,7 @@ namespace GAF.Objects
 	[AddComponentMenu("")]
 	[ExecuteInEditMode]
 	[DisallowMultipleComponent]
-	public class GAFObjectsManager : GAFInternal.Objects.GAFObjectsManagerInternal<GAFObject>
+	public class GAFObjectsManager : GAFObjectsManagerInternal<GAFObject>
 	{
 		#region /////// GAFBaseObjectManager //////////
 
@@ -37,7 +38,7 @@ namespace GAF.Objects
 
 		public override void reload()
 		{
-			cachedRenderer.lightProbeUsage = UnityEngine.Rendering.LightProbeUsage.Off;
+			cachedRenderer.useLightProbes = false;
 			cachedRenderer.reflectionProbeUsage = UnityEngine.Rendering.ReflectionProbeUsage.Off;
 			cachedRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
 			cachedRenderer.receiveShadows = false;

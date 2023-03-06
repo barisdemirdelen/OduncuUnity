@@ -15,6 +15,8 @@ MonoBehaviour:
   rootClip: {fileID: 0}
   m_EnableSequenceCaching: 0
   m_AssetVersion: 4
+  m_ResourcesDirectory: GAF/Resources/Cache/
+  m_MecanimResourcesDirectory: 
   m_AudioResourcesDirectory: Sprites\Title/
   m_AssetData: 4341470005091903000078da63640081067b4628cdc9c009a479fe03c109c6450cbc0cef98c0320c3c1005fbc1b8e1a93303839a33480358330f43517e7e4948666e6a4e665e2a078327cc5490b18c020c25992539a9f1c525894939a97a0579e9081b271c6460e800620707080619780668f00f27b05690122e063e2893092604744d0013c44d1065105106a85b19600e6340e123d490a0a1c19e99780d60be030b093680bdcc4a9a06060636d29cd4b09f9d440df61ca43a8993041bf683e29a8b340d0dfbb9497492030fa99e66400200010a4aee
   m_GUID: 512744f9db00784478d9af062e4a628e
@@ -26,3 +28,4 @@ MonoBehaviour:
   m_HasNesting: 0
   m_KeyFrames: []
   m_AudioResources: []
+  m_AnimatorControllers: []

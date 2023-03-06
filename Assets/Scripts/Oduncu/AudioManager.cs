@@ -11,7 +11,7 @@ namespace Oduncu
         public AudioSource treeWalk;
         public AudioSource bossWalk;
         public AudioSource bossMusic;
-        
+
         private void Awake()
         {
             TreeSpawned.Subscribe(PlayTreeWalkSound);
@@ -23,6 +23,7 @@ namespace Oduncu
 
         private void Start()
         {
+            saw.Stop();
             saw.Play();
         }
 
@@ -36,34 +37,25 @@ namespace Oduncu
 
         private void StopTreeWalkSound(object sender, EventArgs e)
         {
-            if (treeWalk.isPlaying)
-            {
-                treeWalk.Stop();
-            }
+            treeWalk.Stop();
         }
 
         private void PlayBossMusic(object sender, BossSpawned.Args e)
-        {   
-            if (!bossMusic.isPlaying){
+        {
+            if (!bossMusic.isPlaying)
+            {
                 bossMusic.Play();
             }
         }
 
         private void StopBossMusic(object sender, BossKilled.Args e)
         {
-            if (bossMusic.isPlaying)
-            {
-                bossMusic.Stop();
-            }
+            bossMusic.Stop();
         }
 
         private void PlaySawHitSound(object sender, TreeKilled.Args e)
         {
-            if (sawHit.isPlaying)
-            {
-                sawHit.Stop();
-            }
-
+            sawHit.Stop();
             sawHit.Play();
         }
 

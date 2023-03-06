@@ -1,9 +1,9 @@
 
 // File:			GAFBakedObjectsManager.cs
 // Version:			5.2
-// Last changed:	2017/3/30 10:08
+// Last changed:	2017/3/28 12:42
 // Author:			Nikitin Nikolay, Nikitin Alexey
-// Copyright:		Â© 2017 GAFMedia
+// Copyright:		© 2017 GAFMedia
 // Project:			GAF Unity plugin
 
 
@@ -39,7 +39,7 @@ namespace GAF.Objects
 
 		public override void reload()
 		{
-			cachedRenderer.lightProbeUsage = UnityEngine.Rendering.LightProbeUsage.Off;
+			cachedRenderer.useLightProbes = false;
 			cachedRenderer.reflectionProbeUsage = UnityEngine.Rendering.ReflectionProbeUsage.Off;
 			cachedRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
 			cachedRenderer.receiveShadows = false;

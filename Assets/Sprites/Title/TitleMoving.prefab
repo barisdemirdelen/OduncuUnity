@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 1076018585085449712}
   - component: {fileID: 7673100392985074972}
   - component: {fileID: 5520355072652907877}
-  - component: {fileID: 5464340098699880901}
   - component: {fileID: 9165159034626352811}
-  - component: {fileID: 6487534369187963751}
   - component: {fileID: 1273944230935458279}
+  - component: {fileID: 8754639753469614561}
+  - component: {fileID: 9076176488252595127}
   m_Layer: 0
   m_Name: TitleMoving
   m_TagString: Untagged
@@ -36,7 +36,7 @@ Transform:
   m_Children:
   - {fileID: 8427707083233288768}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7673100392985074972
 MeshFilter:
@@ -88,19 +88,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5464340098699880901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4936756370756749217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765628799, guid: 86057e0c3e6f68343894579d83be909f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Clip: {fileID: 1273944230935458279}
 --- !u!114 &9165159034626352811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,45 +101,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MovieClip: {fileID: 1273944230935458279}
-  m_SortingManager: {fileID: 5464340098699880901}
+  m_SortingManager: {fileID: 8754639753469614561}
   m_Objects:
   - {fileID: 2761576055023136701}
---- !u!114 &6487534369187963751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4936756370756749217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -736414528, guid: 86057e0c3e6f68343894579d83be909f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Parent: {fileID: 0}
-  m_Childs:
-  - {fileID: 536730649204631624}
-  m_LocalMatrix:
-    e00: 1
-    e01: 0
-    e02: 0
-    e03: 0
-    e10: 0
-    e11: 1
-    e12: 0
-    e13: 0
-    e20: 0
-    e21: 0
-    e22: 1
-    e23: 0
-    e30: 0
-    e31: 0
-    e32: 0
-    e33: 1
-  m_IsLocalVisible: 1
-  m_RealVisibility: 0
-  m_StencilValue: 0
-  m_HasIndividualMaterial: 0
 --- !u!114 &1273944230935458279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,9 +147,71 @@ MonoBehaviour:
   m_InternalFrameNumber: 1
   m_IsActive: 1
   m_FramesAudioData: []
+  m_UseCustomDelegate: 0
+  m_GetResourceDelegate:
+    m_Data:
+      m_Target: {fileID: 0}
+      m_TargetType: None
+      m_Method: None
+      m_ReturnType: System.Void
+      m_ArgumentTypes:
+      - System.Void
+    m_ReloadFunc: 0
+  m_UsePlaceholder: 0
+  m_PlaceholderMaterial: {fileID: 0}
+  m_PlaceholderSize: {x: 100, y: 100}
+  m_PlaceholderOffset: {x: 0, y: 0}
   m_ClipVersion: 6
   m_SequenceIndex: 0
   m_ObjectsManager: {fileID: 9165159034626352811}
+--- !u!114 &8754639753469614561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4936756370756749217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765628799, guid: 87e1447438e0963498777d84d12e3f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Clip: {fileID: 1273944230935458279}
+--- !u!114 &9076176488252595127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4936756370756749217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -736414528, guid: 87e1447438e0963498777d84d12e3f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Parent: {fileID: 0}
+  m_Childs: []
+  m_LocalMatrix:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_IsLocalVisible: 1
+  m_RealVisibility: 0
+  m_StencilValue: 0
+  m_HasIndividualMaterial: 0
 --- !u!1 &6688243596724463611
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,8 +223,8 @@ GameObject:
   - component: {fileID: 8427707083233288768}
   - component: {fileID: 6989576976207438305}
   - component: {fileID: 6982969799763278774}
-  - component: {fileID: 536730649204631624}
   - component: {fileID: 2761576055023136701}
+  - component: {fileID: 2134721618165906309}
   m_Layer: 0
   m_Name: 1_2
   m_TagString: Untagged
@@ -284,41 +297,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &536730649204631624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6688243596724463611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -736414528, guid: 86057e0c3e6f68343894579d83be909f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Parent: {fileID: 6487534369187963751}
-  m_Childs: []
-  m_LocalMatrix:
-    e00: 1
-    e01: 0
-    e02: 0
-    e03: 0
-    e10: 0
-    e11: 1
-    e12: 0
-    e13: 0
-    e20: 0
-    e21: 0
-    e22: 1
-    e23: 0
-    e30: 0
-    e31: 0
-    e32: 0
-    e33: 1
-  m_IsLocalVisible: 1
-  m_RealVisibility: 1
-  m_StencilValue: 0
-  m_HasIndividualMaterial: 0
 --- !u!114 &2761576055023136701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,3 +329,38 @@ MonoBehaviour:
       y: 3
       width: 408
       height: 124
+--- !u!114 &2134721618165906309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6688243596724463611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -736414528, guid: 87e1447438e0963498777d84d12e3f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Parent: {fileID: 0}
+  m_Childs: []
+  m_LocalMatrix:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_IsLocalVisible: 1
+  m_RealVisibility: 1
+  m_StencilValue: 0
+  m_HasIndividualMaterial: 0

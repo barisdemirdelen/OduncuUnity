@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3548427090002860869}
   - component: {fileID: 1140573911700640463}
   - component: {fileID: 4312334220058705261}
-  - component: {fileID: 3830782773049374754}
   - component: {fileID: 5116761623571175758}
+  - component: {fileID: 6367390829467909616}
   m_Layer: 0
   m_Name: 1_2
   m_TagString: Untagged
@@ -85,41 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3830782773049374754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1821855515321754033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -736414528, guid: 86057e0c3e6f68343894579d83be909f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Parent: {fileID: 7708124958201201868}
-  m_Childs: []
-  m_LocalMatrix:
-    e00: 1
-    e01: 0
-    e02: 0
-    e03: 0
-    e10: 0
-    e11: 1
-    e12: 0
-    e13: 0
-    e20: 0
-    e21: 0
-    e22: 1
-    e23: 0
-    e30: 0
-    e31: 0
-    e32: 0
-    e33: 1
-  m_IsLocalVisible: 1
-  m_RealVisibility: 1
-  m_StencilValue: 0
-  m_HasIndividualMaterial: 0
 --- !u!114 &5116761623571175758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +117,41 @@ MonoBehaviour:
       y: 3
       width: 408
       height: 124
+--- !u!114 &6367390829467909616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821855515321754033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -736414528, guid: 87e1447438e0963498777d84d12e3f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Parent: {fileID: 0}
+  m_Childs: []
+  m_LocalMatrix:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_IsLocalVisible: 1
+  m_RealVisibility: 1
+  m_StencilValue: 0
+  m_HasIndividualMaterial: 0
 --- !u!1 &5975748592761565435
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,10 +163,10 @@ GameObject:
   - component: {fileID: 5009622313160920543}
   - component: {fileID: 7242715382363144496}
   - component: {fileID: 8369044539265933657}
-  - component: {fileID: 2772467486886332227}
   - component: {fileID: 2978321970965956823}
-  - component: {fileID: 7708124958201201868}
   - component: {fileID: 7039924143936685348}
+  - component: {fileID: 2736283981582910149}
+  - component: {fileID: 4445172090789935135}
   m_Layer: 0
   m_Name: TitleStable
   m_TagString: Untagged
@@ -188,7 +188,7 @@ Transform:
   m_Children:
   - {fileID: 3548427090002860869}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7242715382363144496
 MeshFilter:
@@ -240,19 +240,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2772467486886332227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5975748592761565435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765628799, guid: 86057e0c3e6f68343894579d83be909f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7039924143936685348}
 --- !u!114 &2978321970965956823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,45 +253,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MovieClip: {fileID: 7039924143936685348}
-  m_SortingManager: {fileID: 2772467486886332227}
+  m_SortingManager: {fileID: 2736283981582910149}
   m_Objects:
   - {fileID: 5116761623571175758}
---- !u!114 &7708124958201201868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5975748592761565435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -736414528, guid: 86057e0c3e6f68343894579d83be909f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Parent: {fileID: 0}
-  m_Childs:
-  - {fileID: 3830782773049374754}
-  m_LocalMatrix:
-    e00: 1
-    e01: 0
-    e02: 0
-    e03: 0
-    e10: 0
-    e11: 1
-    e12: 0
-    e13: 0
-    e20: 0
-    e21: 0
-    e22: 1
-    e23: 0
-    e30: 0
-    e31: 0
-    e32: 0
-    e33: 1
-  m_IsLocalVisible: 1
-  m_RealVisibility: 0
-  m_StencilValue: 0
-  m_HasIndividualMaterial: 0
 --- !u!114 &7039924143936685348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,6 +299,68 @@ MonoBehaviour:
   m_InternalFrameNumber: 1
   m_IsActive: 1
   m_FramesAudioData: []
+  m_UseCustomDelegate: 0
+  m_GetResourceDelegate:
+    m_Data:
+      m_Target: {fileID: 0}
+      m_TargetType: None
+      m_Method: None
+      m_ReturnType: System.Void
+      m_ArgumentTypes:
+      - System.Void
+    m_ReloadFunc: 0
+  m_UsePlaceholder: 0
+  m_PlaceholderMaterial: {fileID: 0}
+  m_PlaceholderSize: {x: 100, y: 100}
+  m_PlaceholderOffset: {x: 0, y: 0}
   m_ClipVersion: 6
   m_SequenceIndex: 0
   m_ObjectsManager: {fileID: 2978321970965956823}
+--- !u!114 &2736283981582910149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5975748592761565435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765628799, guid: 87e1447438e0963498777d84d12e3f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Clip: {fileID: 7039924143936685348}
+--- !u!114 &4445172090789935135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5975748592761565435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -736414528, guid: 87e1447438e0963498777d84d12e3f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Parent: {fileID: 0}
+  m_Childs: []
+  m_LocalMatrix:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  m_IsLocalVisible: 1
+  m_RealVisibility: 0
+  m_StencilValue: 0
+  m_HasIndividualMaterial: 0

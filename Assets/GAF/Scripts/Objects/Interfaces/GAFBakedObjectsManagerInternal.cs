@@ -1,9 +1,9 @@
 
 // File:			GAFBakedObjectsManagerInternal.cs
 // Version:			5.2
-// Last changed:	2017/3/31 09:57
+// Last changed:	2017/3/31 09:45
 // Author:			Nikitin Nikolay, Nikitin Alexey
-// Copyright:		Â© 2017 GAFMedia
+// Copyright:		© 2017 GAFMedia
 // Project:			GAF Unity plugin
 
 
@@ -95,23 +95,23 @@ namespace GAFInternal.Objects
 			}
 		}
 
-		//public override List<GAFTransform> timelines
-		//{
-		//	get
-		//	{
-		//		throw new NotImplementedException();
-		//	}
-		//}
+        //public override List<GAFTransform> timelines
+        //{
+        //	get
+        //	{
+        //		throw new NotImplementedException();
+        //	}
+        //}
 
-		#endregion // Properties
+        #endregion // Properties
 
-		#region Interface
+        #region Interface
 
-		/// <summary>
-		/// Initialize object manager parameters.
-		/// <para />Animation subobjects are created here.
-		/// </summary>
-		public override void initialize()
+        /// <summary>
+        /// Initialize object manager parameters.
+        /// <para />Animation subobjects are created here.
+        /// </summary>
+        public override void initialize()
 		{
 			//cachedRenderer.hideFlags 	= HideFlags.NotEditable;
 			//cachedFilter.hideFlags 		= HideFlags.NotEditable;

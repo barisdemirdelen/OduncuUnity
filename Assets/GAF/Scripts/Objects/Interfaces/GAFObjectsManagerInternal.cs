@@ -1,9 +1,9 @@
 
 // File:			GAFObjectsManagerInternal.cs
 // Version:			5.2
-// Last changed:	2017/3/31 09:57
+// Last changed:	2017/3/31 09:45
 // Author:			Nikitin Nikolay, Nikitin Alexey
-// Copyright:		Â© 2017 GAFMedia
+// Copyright:		© 2017 GAFMedia
 // Project:			GAF Unity plugin
 
 
@@ -32,7 +32,6 @@ namespace GAFInternal.Objects
 		[HideInInspector][SerializeField] private GAFBaseClip			m_MovieClip			= null;
 		[HideInInspector][SerializeField] private GAFSortingManager		m_SortingManager	= null;
 		[HideInInspector][SerializeField] private List<TypeOfObject>	m_Objects			= new List<TypeOfObject>();
-		//[HideInInspector][SerializeField] private List<GAFTransform>	m_Timelines			= new List<GAFTransform>();
 
 		[HideInInspector]
 		[System.NonSerialized]
@@ -197,13 +196,13 @@ namespace GAFInternal.Objects
 			foreach (Transform child in cachedTransform)
 				children.Add(child.gameObject);
 			
-			children.ForEach((GameObject child) =>
+			foreach (var child in children)
 			{
 				if (Application.isPlaying)
 					Destroy(child);
 				else
 					DestroyImmediate(child, true);
-			});
+			}
 		}
 
 		/// <summary>
@@ -228,23 +227,6 @@ namespace GAFInternal.Objects
 						obj.updateToState(GAFObjectStateData.defaultState, _Refresh);
 					}
 				}
-
-				//foreach (var obj in objects)
-				//{
-				//	if (obj.name == "13_38" || obj.name == "14_39")
-				//	{
-				//		int test = 0;
-				//	}
-
-				//	if (_States.ContainsKey(obj.objectID))
-				//	{
-				//		obj.updateToState(_States[obj.objectID]);
-				//	}
-				//	else
-				//	{
-				//		obj.updateToState(Data.GAFObjectStateData.defaultState);
-				//	}
-				//}
 			}
 			else
 			{
@@ -286,14 +268,17 @@ namespace GAFInternal.Objects
 		protected sealed override void createObjects()
 		{
 			var objects = clip.asset.getObjects(clip.timelineID);
-			var masks	= clip.asset.getMasks(clip.timelineID);
+			var masks = clip.asset.getMasks(clip.timelineID);
 
 			for (int i = 0; i < objects.Count; ++i)
 			{
 				var _objectData = objects[i];
-				var _name		= getObjectName(_objectData);
-				var _type		= clip.asset.getExternalData(clip.timelineID).objectTypeFlags[i];
-				
+				string _name = string.Empty;
+
+				_name = getObjectName(_objectData);
+
+				var _type = clip.asset.getExternalData(clip.timelineID).objectTypeFlags[i];
+
 				m_Objects.Add(createObject(_name, _type, _objectData));
 			}
 

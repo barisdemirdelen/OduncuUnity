@@ -1,7 +1,7 @@
 
 // File:			GAFBakedMovieClipInternalEditor.cs
 // Version:			5.2
-// Last changed:	2017/3/31 09:57
+// Last changed:	2017/3/28 14:41
 // Author:			Nikitin Nikolay, Nikitin Alexey
 // Copyright:		© 2017 GAFMedia
 // Project:			GAF Unity plugin
@@ -66,6 +66,8 @@ namespace GAFEditorInternal.Core
 			
 			drawAsset();
 			drawResourcesState();
+			drawPlaceholder();
+			drawResourceManagement();
 
 			drawSettings();
 			drawSequences();
@@ -90,6 +92,16 @@ namespace GAFEditorInternal.Core
 				var settingProperty = serializedObject.FindProperty("m_Settings");
 				EditorGUILayout.BeginVertical(EditorStyles.textField);
 				{
+					//GUILayout.Space(3f);
+					//EditorGUI.BeginChangeCheck();
+
+					//drawProperty(settingProperty.FindPropertyRelative("m_FlipX"), new GUIContent("Flip X: ", "​Flip current animation by x"));
+					//if (EditorGUI.EndChangeCheck())
+					//{
+					//	serializedObject.ApplyModifiedProperties();
+					//	reloadTargets();
+					//}
+
 					GUILayout.Space(3f);
 					drawProperty(settingProperty.FindPropertyRelative("m_PlayAutomatically"), new GUIContent("Play automatically: ", "Should the animation be played automatically when starting the scene? (Defines whether the animation should be played automatically when starting the scene)​"));
 					
@@ -114,6 +126,16 @@ namespace GAFEditorInternal.Core
 						{
 							_target.cacheAllStates();
 						}
+					}
+
+					//GUI.enabled = guiEnabled;
+					GUILayout.Space(3f);
+					EditorGUI.BeginChangeCheck();
+					drawProperty(settingProperty.FindPropertyRelative("m_UseLights"), new GUIContent("Use lights: ", "When this property is true, animation starts using normals.​"));
+					if (EditorGUI.EndChangeCheck())
+					{
+						serializedObject.ApplyModifiedProperties();
+						reloadTargets();
 					}
 
 					GUILayout.Space(10f);

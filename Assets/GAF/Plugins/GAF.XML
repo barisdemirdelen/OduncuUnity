@@ -50,6 +50,32 @@
             Returns reference to resource file of current animation.
             </summary>
         </member>
+        <member name="P:GAFInternal.Core.GAFBaseClip.useCustomDelegate">
+            <summary>
+            Returns true if current clip uses custom method for getting resources.
+            </summary>
+        </member>
+        <member name="P:GAFInternal.Core.GAFBaseClip.customGetResourceDelegate">
+            <summary>
+            Returns delegate that contains custom method for getting resources.
+            </summary>
+        </member>
+        <member name="P:GAFInternal.Core.GAFBaseClip.usePlaceholder">
+            <summary>
+            Returns true if animation will use placeholder texture
+            <para />instead of animation resources or during resources loading.
+            </summary>
+        </member>
+        <member name="P:GAFInternal.Core.GAFBaseClip.placeholderSize">
+            <summary>
+            Returns placeholder size.
+            </summary>
+        </member>
+        <member name="P:GAFInternal.Core.GAFBaseClip.placeholderOffset">
+            <summary>
+            Returns offset of placeholder position.
+            </summary>
+        </member>
         <member name="M:GAFInternal.Core.GAFBaseClip.initialize(GAFInternal.Assets.GAFAnimationAssetInternal)">
             <summary>
             Initialize animation clip with it's root timeline. Crashes if root timeline is not present.
@@ -596,6 +622,13 @@
             <param name="_CSF">Content scale factor of desired resource.</param>
             <returns></returns>
         </member>
+        <member name="M:GAFInternal.Assets.GAFAnimationAssetInternal.getAnimatorController(System.Int32)">
+            <summary>
+            Get runtime animator controller associated with current animation.
+            </summary>
+            <param name="_TimelineID">ID of animation timeline.</param>
+            <returns></returns>
+        </member>
         <member name="M:GAFInternal.Assets.GAFAnimationAssetInternal.getResourceName(System.Single,System.Single)">
             <summary>
             Generate resource name by scale and content scale factor values.
@@ -717,6 +750,11 @@
             Returns list with paths to animation resources assets.
             </summary>
         </member>
+        <member name="P:GAFInternal.Assets.GAFAnimationAssetInternal.animatorControllers">
+            <summary>
+            Returns list with references to mecanim controllers.
+            </summary>
+        </member>
         <member name="P:GAFInternal.Assets.GAFAnimationAssetInternal.audioResources">
             <summary>
             Returns list with references to audio clips.
@@ -735,6 +773,16 @@
         <member name="P:GAFInternal.Assets.GAFAnimationAssetInternal.audioResourcesDirectory">
             <summary>
             Returns path to custom directory for audio resources storing.
+            </summary>
+        </member>
+        <member name="P:GAFInternal.Assets.GAFAnimationAssetInternal.resourcesDirectory">
+            <summary>
+            Returns path to custom directory for animation resources storing.
+            </summary>
+        </member>
+        <member name="P:GAFInternal.Assets.GAFAnimationAssetInternal.mecanimResourcesDirectory">
+            <summary>
+            Returns path to custom directory for mecanim resources storing.
             </summary>
         </member>
         <member name="M:GAFInternal.Assets.GAFTexturesResourceInternal.setData(System.String,UnityEngine.Texture2D,UnityEngine.Material)">

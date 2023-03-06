@@ -17,11 +17,11 @@ MonoBehaviour:
     m_TexturesPOT: 0
     m_ForceSquared: 0
     m_CompressGAF: 1
-    m_UseActionAfterConversion: 1
+    m_UseActionAfterConversion: 0
     m_ActionAfterConversionMovieClip: 1
     m_ActionAfterConversionNotBaked: 1
     m_ActionAfterConversion: 24
-    m_AutoConverting: 1
+    m_AutoConverting: 0
     m_MaxTextureSize: {x: 4096, y: 4096}
     m_UseAdvancedInterface: 0
     m_Scales:
@@ -32,10 +32,10 @@ MonoBehaviour:
     - 1
     m_CSFsNames:
     - 
-    m_AnimationFolder: C:/Users/baris/projects/OduncuUnity/Assets/
+    m_AnimationFolder: 
     m_DontShowWindowOnImport: 0
-    m_DontShowOnUpload: 1
-    m_DontShowOnUploadTemp: 1
+    m_DontShowOnUpload: 0
+    m_DontShowOnUploadTemp: 0
     m_DontShowOnReportIssue: 0
     m_SaveAsZip: 0
     m_SaveAsZipTo: 
