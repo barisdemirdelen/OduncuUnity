@@ -1,19 +1,16 @@
 {
-    "name": "Oduncu",
+    "name": "GafObjectsEditor",
     "rootNamespace": "",
     "references": [
         "GUID:2872f449ff75e5143b661c66cb6d41cf"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
-    "overrideReferences": true,
-    "precompiledReferences": [
-        "GAF.dll",
-        "GAFConverter.dll",
-        "GAFEditor.dll",
-        "Ionic.Zip.Reduced.dll"
-    ],
+    "overrideReferences": false,
+    "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],

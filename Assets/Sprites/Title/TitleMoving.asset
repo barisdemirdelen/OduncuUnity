@@ -16,11 +16,11 @@ MonoBehaviour:
   m_EnableSequenceCaching: 0
   m_AssetVersion: 4
   m_ResourcesDirectory: GAF/Resources/Cache/
-  m_MecanimResourcesDirectory: 
-  m_AudioResourcesDirectory: 
+  m_MecanimResourcesDirectory: Sprites\Title/TitleMoving_animator/
+  m_AudioResourcesDirectory: Sprites\Title/
   m_AssetData: 434147000509b702000078da63640081067b4628cdc9c009a479fe03c109c6450cbc0c3d4c6019062e30d971108c1d185d1818e29c816c471066e46128cacf2f09c9cc4dcdc9cc4be560f084990a32965180a124b32427353e37bf2c332f5daf202f1d61e30488810c0e0e10dc60cfc0700668f00f27b05688cd7c5026134c888187e11d23c44d1065105106a85b1920e680303abfc19189780d0e40df3538309366c3010716e23580bc3ec19195780d070e8034b191e00750c01e64275e0303d0061d270ee2355c008692c2414e124209e8241e272ee2351838813430200100695948bc
   m_GUID: f846d94e5e6e5ea4c96e7149b29a48ce
-  m_Path: Sprites\title_moving/
+  m_Path: Sprites\Title/
   m_IsExternalDataCollected: 1
   m_ExternalData:
   - m_TimelineID: 0
@@ -28,4 +28,5 @@ MonoBehaviour:
   m_HasNesting: 0
   m_KeyFrames: []
   m_AudioResources: []
-  m_AnimatorControllers: []
+  m_AnimatorControllers:
+  - {fileID: 9100000, guid: 6cfdaa870ccb2a4439dfa1e082d893f8, type: 2}

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59f0b625614a406468ee087f147489e7, type: 3}
-  m_Name: '[TitleMoving]f846d94e5e6e5ea4c96e7149b29a48ce_1_1'
+  m_Name: 
   m_EditorClassIdentifier: 
   m_Asset: {fileID: 11400000, guid: f846d94e5e6e5ea4c96e7149b29a48ce, type: 2}
   m_Scale: 1

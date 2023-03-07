@@ -5,11 +5,11 @@
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
-    "overrideReferences": true,
+    "overrideReferences": false,
     "precompiledReferences": [
         "GAF.dll",
-        "GAFEditor.dll",
         "GAFConverter.dll",
+        "GAFEditor.dll",
         "Ionic.Zip.Reduced.dll"
     ],
     "autoReferenced": true,
