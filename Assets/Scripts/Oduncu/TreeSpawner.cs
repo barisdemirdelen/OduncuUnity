@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DG.Tweening;
 using Oduncu.Events;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -106,7 +107,20 @@ namespace Oduncu
         private void OnTreeKilled(object sender, TreeKilled.Args e)
         {
             m_Trees.Remove(e.GameObject);
-            Destroy(e.GameObject);
+            var localTransform = e.GameObject.transform;
+            var localPosition = localTransform.localPosition;
+
+            e.GameObject.GetComponent<Rigidbody2D>().simulated = false;
+
+            var rotation = localTransform.localScale.x > 0 ? -90f : 90f;
+            
+            DOTween.Sequence().Join( e.GameObject.transform.DOLocalMove(
+                    new Vector3(localPosition.x, localPosition.y - 1080, localPosition.z),
+                    2.5f).SetEase(Ease.Linear)).Join(e.GameObject.transform.DOLocalRotate(
+                new Vector3(0f, 0f, rotation),
+                2.5f).SetEase(Ease.Linear)).OnComplete(() => Destroy(e.GameObject));
+            
+           
 
             if (m_Trees.Count == 0 && m_Boss == null)
             {
@@ -116,7 +130,12 @@ namespace Oduncu
 
         private void OnBossKilled(object sender, BossKilled.Args e)
         {
-            Destroy(m_Boss);
+            var localTransform =  e.GameObject.transform;
+            var localPosition = localTransform.localPosition;
+            e.GameObject.GetComponent<Rigidbody2D>().simulated = false;
+            e.GameObject.transform.DOLocalMove(
+                new Vector3(localPosition.x, localPosition.y - 1080, localPosition.z),
+                4f).SetEase(Ease.Linear).OnComplete(() => Destroy(e.GameObject));
             m_Boss = null;
 
             if (m_Trees.Count == 0)

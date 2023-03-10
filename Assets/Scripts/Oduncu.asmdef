@@ -2,17 +2,19 @@
     "name": "Oduncu",
     "rootNamespace": "",
     "references": [
-        "GUID:2872f449ff75e5143b661c66cb6d41cf"
+        "GUID:2872f449ff75e5143b661c66cb6d41cf",
+        "GUID:2b6202556a1df274da2a465b9ccc51c8"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
-    "overrideReferences": true,
+    "overrideReferences": false,
     "precompiledReferences": [
         "GAF.dll",
         "GAFConverter.dll",
         "GAFEditor.dll",
-        "Ionic.Zip.Reduced.dll"
+        "Ionic.Zip.Reduced.dll",
+        "DOTween.dll"
     ],
     "autoReferenced": true,
     "defineConstraints": [],
