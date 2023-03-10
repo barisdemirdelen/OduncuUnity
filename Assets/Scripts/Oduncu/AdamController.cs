@@ -20,7 +20,7 @@ public class AdamController : MonoBehaviour
 
         var sign = mousePosition.x < currentTransform.position.x ? -1 : 1;
         var localScale = currentTransform.localScale;
-        localScale.x = sign * localScale.x;
+        localScale.x = sign * Math.Abs(localScale.x);
         currentTransform.localScale = localScale;
     }
 
