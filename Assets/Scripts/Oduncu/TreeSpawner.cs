@@ -65,25 +65,42 @@ namespace Oduncu
         private GameObject SpawnTree()
         {
             var treePrefab = treePrefabs[Random.Range(0, treePrefabs.Count)];
-            var tree = Instantiate(treePrefab, treeContainer.transform);
-            var position = tree.transform.localPosition;
-            tree.transform.localPosition = new Vector3(((RectTransform)treeContainer.transform).rect.xMax + 240,
-                position.y, position.z);
-            tree.GetComponent<Rigidbody2D>().velocity = new Vector2(-treeSpeed, 0);
+            var tree = Spawn(treePrefab, 240f);
             TreeSpawned.Invoke(this, new TreeSpawned.Args(tree));
             return tree;
         }
 
         private GameObject SpawnBoss()
         {
-            var boss = Instantiate(bossPrefab, treeContainer.transform);
+            var boss = Spawn(bossPrefab, 760f);
             boss.name = "Boss";
-            var position = boss.transform.localPosition;
-            boss.transform.localPosition = new Vector3(((RectTransform)treeContainer.transform).rect.xMax + 760,
-                position.y, position.z);
-            boss.GetComponent<Rigidbody2D>().velocity = new Vector2(-treeSpeed, 0);
+
             BossSpawned.Invoke(this, new BossSpawned.Args(boss));
             return boss;
+        }
+
+        private GameObject Spawn(GameObject prefab, float offset)
+        {
+            var tree = Instantiate(prefab, treeContainer.transform);
+            var position = tree.transform.localPosition;
+
+            if (Random.Range(0f, 1f) < 0.5f)
+            {
+                tree.transform.localPosition = new Vector3(((RectTransform)treeContainer.transform).rect.xMax + offset,
+                    position.y, position.z);
+                tree.GetComponent<Rigidbody2D>().velocity = new Vector2(-treeSpeed, 0);
+            }
+            else
+            {
+                tree.transform.localPosition = new Vector3(((RectTransform)treeContainer.transform).rect.xMin - offset,
+                    position.y, position.z);
+                tree.GetComponent<Rigidbody2D>().velocity = new Vector2(treeSpeed, 0);
+                var localScale = tree.transform.localScale;
+                localScale = new Vector2(-localScale.x, localScale.y);
+                tree.transform.localScale = localScale;
+            }
+
+            return tree;
         }
 
         private void OnTreeKilled(object sender, TreeKilled.Args e)
