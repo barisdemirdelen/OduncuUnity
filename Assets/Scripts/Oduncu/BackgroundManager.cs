@@ -8,7 +8,7 @@ namespace Oduncu
         public GameObject normalBackground;
         public GameObject bossBackground;
         
-        private void Start()
+        private void Awake()
         {
             BossSpawned.Subscribe(OnBossSpawned);
             BossKilled.Subscribe(OnBossKilled);

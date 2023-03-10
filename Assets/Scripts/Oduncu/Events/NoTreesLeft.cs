@@ -1,10 +1,13 @@
 ﻿using System;
-using UnityEngine;
 
 namespace Oduncu.Events
 {
-    public class NoTreesLeft : BaseEvent<EventArgs>
+    public class NoTreesLeft : BaseEvent<NoTreesLeft.Args>
     {
-    
+
+        public class Args : EventArgs
+        {
+
+        }
     }
 }

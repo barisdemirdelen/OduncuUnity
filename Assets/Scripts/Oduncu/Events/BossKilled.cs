@@ -7,11 +7,11 @@ namespace Oduncu.Events
     {
         public class Args : EventArgs
         {
-            public GameObject GameObject;
+            public readonly GameObject gameObject;
             
             public Args(GameObject gameObject)
             {
-                GameObject = gameObject;
+                this.gameObject = gameObject;
 
             }
         }

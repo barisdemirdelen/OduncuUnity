@@ -26,7 +26,8 @@ public class AdamController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        AdamKilled.Invoke(this, EventArgs.Empty);
+        AdamKilled.Invoke(this, new AdamKilled.Args());
+
         Destroy(gameObject);
     }
 }
