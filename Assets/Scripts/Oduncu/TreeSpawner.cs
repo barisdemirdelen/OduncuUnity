@@ -33,7 +33,6 @@ namespace Oduncu
         {
             m_Trees = new HashSet<GameObject>();
             NoTreesLeft.Invoke(this, EventArgs.Empty);
-            m_Trees.Add(SpawnTree());
         }
 
         private void Update()
